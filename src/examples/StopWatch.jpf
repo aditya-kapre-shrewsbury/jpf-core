@@ -1,3 +1,5 @@
 target = StopWatch
 
-listener = .listener.StopWatchFuzzer
+#listener = .listener.StopWatchFuzzer
+
+listener=gov.nasa.jpf.listener.JIVEListener

@@ -1,4 +1,5 @@
 target = Rand
+
 listener=gov.nasa.jpf.listener.JIVEListener
 
 cg.enumerate_random = true

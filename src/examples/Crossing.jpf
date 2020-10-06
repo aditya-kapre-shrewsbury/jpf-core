@@ -1,4 +1,5 @@
 target = Crossing
+listener=gov.nasa.jpf.listener.JIVEListener
 
 vm.tree_output = false 
 vm.path_output = true

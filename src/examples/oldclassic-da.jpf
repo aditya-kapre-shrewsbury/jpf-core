@@ -2,9 +2,11 @@
 
 target=oldclassic
 
+listener=gov.nasa.jpf.listener.JIVEListener
+
 # turn off instruction trace
 report.console.property_violation=error,snapshot
 
 # deadlock analyzer is a property-specific trace report generator
-listener=.listener.DeadlockAnalyzer
+# listener=.listener.DeadlockAnalyzer
 deadlock.format=essential

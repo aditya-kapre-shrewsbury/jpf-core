@@ -1,5 +1,7 @@
 target = RobotManager
 
-listener=.listener.TraceStorer
+#listener=.listener.TraceStorer
+
+listener=gov.nasa.jpf.listener.JIVEListener
 
 cg.enumerate_random=true

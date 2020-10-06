@@ -1,5 +1,7 @@
 target = Racer
 
-listener=gov.nasa.jpf.listener.PreciseRaceDetector
+#listener=gov.nasa.jpf.listener.PreciseRaceDetector
+
+listener=gov.nasa.jpf.listener.JIVEListener
 
 report.console.property_violation=error,trace

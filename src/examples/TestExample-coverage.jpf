@@ -1,6 +1,8 @@
 target = TestExample
 
-listener=.listener.CoverageAnalyzer
+# listener=.listener.CoverageAnalyzer
+
+listener=gov.nasa.jpf.listener.JIVEListener
 
 coverage.include = T1,T2
 coverage.show_methods = true

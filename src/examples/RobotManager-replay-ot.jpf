@@ -1,6 +1,8 @@
 target = RobotManager
 
-listener=.listener.ChoiceSelector,.listener.ObjectTracker
+# listener=.listener.ChoiceSelector,.listener.ObjectTracker
+
+listener=gov.nasa.jpf.listener.JIVEListener
 
 choice.use_trace=trace
 

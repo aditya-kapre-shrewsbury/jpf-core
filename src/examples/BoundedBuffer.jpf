@@ -1,4 +1,5 @@
 target = BoundedBuffer
+listener=gov.nasa.jpf.listener.JIVEListener
 
 # this should produce a deadlock
 target.args = 2,4,1

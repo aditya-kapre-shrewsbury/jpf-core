@@ -1,6 +1,7 @@
 target = NumericValueCheck
 
-listener = .listener.NumericValueChecker
+listener=gov.nasa.jpf.listener.JIVEListener
+#listener = .listener.NumericValueChecker
 
 # NumericValueChecker configuration
 range.vars = 1
