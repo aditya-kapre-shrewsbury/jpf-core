@@ -1,1 +1,2 @@
 target=HelloWorld
+listener=gov.nasa.jpf.listener.JIVEListener

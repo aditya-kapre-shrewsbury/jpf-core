@@ -23,8 +23,6 @@ import gov.nasa.jpf.search.Search;
 import gov.nasa.jpf.search.SearchListener;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,7 +34,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Stack;
 
-import oracle.jrockit.jfr.tools.ConCatRepository;
 
 public class JIVEListener implements VMListener, SearchListener {
 
@@ -113,7 +110,7 @@ public class JIVEListener implements VMListener, SearchListener {
 			fstream.write("id=" + id + "\n");
 			fstream.write("thisid=" + thisid + "\n");
 			fstream.write("thread="
-					+ search.getVM().getLastThreadInfo().getId() + "\n");
+					+ search.getVM().getLastTransition().getThreadInfo().getId() + "\n");
 			fstream.write("kind=Path End" + "\n");
 			fstream.write("file=" + search.getVM().getPath().getApplication() + ".java"
 					+ "\n");
@@ -1018,7 +1015,7 @@ public class JIVEListener implements VMListener, SearchListener {
 			--thisid;
 			fstream.write("id=" + id + "\n");
 			fstream.write("thisid=" + thisid + "\n");
-			fstream.write("thread=" + vm.getLastThreadInfo().getId() + "\n");
+			fstream.write("thread=" + vm.getLastTransition().getThreadInfo().getId() + "\n");
 			fstream.write("kind=Path Start" + "\n");
 			fstream.write("file=" + vm.getPath().getApplication() + ".java" + "\n");
 			fstream.write("line=" + vm.getCurrentThread().getLine() + "\n");
@@ -1091,10 +1088,12 @@ public class JIVEListener implements VMListener, SearchListener {
 		if (isRelevantMethod(strFullMethodName)) {
 
 			//MethodInfo mi = vm.getLastMethodInfo();
+			//ElementInfo ei = vm.getLastElementInfo();
 			//newjivejpf
 			MethodInfo mi = enteredMethod;
+			ElementInfo ei = currentThread.getThisElementInfo();
+
 			
-			ElementInfo ei = vm.getLastElementInfo();
 			int iObjRef = ei.getObjectRef();
 			ElementInfo objInfo = vm.getElementInfo(iObjRef);
 			
